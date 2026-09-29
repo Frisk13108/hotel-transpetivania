@@ -18,7 +18,7 @@
         </p>
     </header>
 
-    <RouterLink class="btn btn-primary" :to="{ name: 'addpet' }">
+    <RouterLink class="btn btn-primary" :to="{ name: 'novo-pet' }">
         Adicionar Pet
     </RouterLink>
     </div>
