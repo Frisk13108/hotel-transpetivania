@@ -68,7 +68,12 @@
                     <td>{{ pet.id }}</td>
                     <td>{{ pet.nome }}</td>
                     <td>{{ pet.especie }}</td>
-                    <td>{{ nomeDoTutor(pet.tutorId) }}</td>
+
+                    <td>
+                        <RouterLink :to="`/tutores/${pet.tutorId}`">
+                            {{ nomeDoTutor(pet.tutorId) }}
+                        </RouterLink> 
+                    </td>
                     <td> 
                         <RouterLink :to="`/pets/${pet.id}`"> Visualizar </RouterLink>
                         <button 
