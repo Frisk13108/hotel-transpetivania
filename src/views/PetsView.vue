@@ -24,9 +24,11 @@
         for(const tutor of tutores.value) {
             if(tutor.id === tutorId){
                 return tutor.nome
+            } else {
+                return 'Oopps, Tutor não encontrado!'
             }
 
-            return 'Oopps, Tutor não encontrado!'
+            
         }
     }
 
