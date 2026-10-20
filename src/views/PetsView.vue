@@ -20,18 +20,17 @@
         console.log('TUTORES -', tutores.value);
     }
 
-    function nomeDoTutor(tutorId) {
-        for(const tutor of tutores.value) {
-            if(tutor.id === tutorId){
-                return tutor.nome
-            }
-
-            
-                return 'Oopps, Tutor não encontrado!'
-
-            
+    
+function nomeDoTutor(tutorId) {
+    for (const tutor of tutores.value) {
+        if (tutor.id === tutorId) {
+            return tutor.nome;
         }
     }
+
+    return 'Oopps, Tutor não encontrado!';
+}
+
 
     async function excluirPet(id) {
         const confirmarExclusao = window.confirm('Deseja realmente excluir o pet?');
