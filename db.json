@@ -63,6 +63,12 @@
       "especie": "Cachorro",
       "tutorId": "iezDAev50Mk",
       "id": "o7vZawoHy9I"
+    },
+    {
+      "nome": "joaquina",
+      "especie": "Cachorro",
+      "tutorId": "1",
+      "id": "KDE1DRGjiKc"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
