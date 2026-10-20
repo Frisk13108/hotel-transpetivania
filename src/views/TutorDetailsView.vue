@@ -60,6 +60,11 @@ onMounted(carregarTutor);
         <h1>Nome do Tutor: {{ tutor.nome }}</h1>
         <p>Telefone: {{ tutor.telefone }}</p>
 
+        <section>
+            <h2>
+                Pets do Tutor
+            </h2>
+
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
@@ -127,9 +132,11 @@ onMounted(carregarTutor);
 
             <div class="col-12 d-flex gap-2 mt-3">
                 <button class="btn btn-success" type="submit">
-                    Salvar Pet
+                    Cadastrar Pet
                 </button>
             </div>
         </form>
+
+        </section>
     </section>
 </template>

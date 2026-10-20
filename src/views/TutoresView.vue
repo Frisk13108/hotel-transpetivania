@@ -3,6 +3,7 @@ import { onMounted, ref } from 'vue';
 
 
 const tutores = ref([]);
+const pets = ref([]);
 
 
 const API_URL = 'http://localhost:3000';
@@ -10,7 +11,16 @@ const API_URL = 'http://localhost:3000';
 async function carregarDados() {
         const respostaTutores = await fetch(`${API_URL}/tutores`);
         tutores.value = await respostaTutores.json();
+
+        const respostaPets = await fetch(`${API_URL}/pets`);
+        pets.value = await respostaPets.json();
     }
+
+function qtdPets(tutorId) {
+    return pets.value.filter(
+        pet => pet.tutorId === tutorId
+    ).length;
+}
 
 async function excluirTutor(id) {
         const confirmarExclusao = window.confirm('Deseja realmente excluir o tutor?');
@@ -41,15 +51,16 @@ onMounted(carregarDados);
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Telefone / Celular / Whattsapp</th>
+                <th>Qtd Pets</th>
                 <th>Ações</th>
+                
             </thead>
             <tbody>
                 <tr v-for="tutor in tutores" :key="tutor.id">
                     <td>{{ tutor.id }}</td>
                     <td>{{ tutor.nome }}</td>
                     <td>{{ tutor.telefone }}</td>
-                
-                
+                    <td>{{ qtdPets(tutor.id) }}</td> 
                 <td>
                     <RouterLink :to="`/tutores/${tutor.id}`"> Visualizar </RouterLink>
                         <button 
@@ -58,7 +69,8 @@ onMounted(carregarDados);
                         >
                             Excluir
                         </button>
-                </td> 
+                </td>
+                
                 </tr>
             </tbody>    
             </table>

@@ -57,6 +57,7 @@ function nomeDoTutor(tutorId) {
                 </p>
         </header>
 
+        
         <table class="table table-striped table-hover">
             <thead>
                 <th>id</th>
